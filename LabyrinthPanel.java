@@ -136,7 +136,7 @@ public class LabyrinthPanel extends JPanel implements MouseListener, MouseMotion
    }
    
 	 //***BEGIN MOUSE STUFF***
-   private class Listener implements ActionListener
+private class Listener implements ActionListener
    {
       public void actionPerformed(ActionEvent e)	//this is called for each timer iteration - make the enemy move randomly
       {
@@ -163,11 +163,16 @@ public class LabyrinthPanel extends JPanel implements MouseListener, MouseMotion
    }
    public void mouseClicked( MouseEvent e )
    {      
-      //check if on row or column that has arrow present
+	//TODO: track location of where it is clicked and use location to figure out if on a certain tile
+	   //check if on row or column that has arrow present
       //if (on row or column w/ arrow present)
       int shift = 0;  //temporary shifting variable
       shift(board);//shift all neighbors up by one (manipulate the neighbors array so everything goes up by one for each member of that row)
-      
+      for (int r = 0; r < board.length; r++) {
+	for (int c = 0; c < board[0].length; c++) {
+
+	}
+      }
       //for each member in board
       //setNeighbors to set neighbors to the next one's neighbors, and keep moving on. when you reach the last one take it out and set as the outOfBoardTile
       //this'll be for all of board

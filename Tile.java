@@ -9,6 +9,7 @@ public class Tile { //will be for 7 x 7 board
    private boolean pathAvail;  //checks if there are any bordering pieces that could lead to a path or if you are locked in
    private boolean isTreasure;  //checks if the treasure on the piece is what you want
    private boolean movable; //checks if the card is the last card in row or column for user to use
+   private boolean isArrow; //check if it is on a row or column that is movable
    private ImageIcon tileImage;
    private boolean[] paths;//0=up,1=right,2=down,3=left
    private boolean onBoard; //checks if it is on board or not
@@ -69,6 +70,13 @@ public class Tile { //will be for 7 x 7 board
       isTreasure = iT;
    }
    
+   public boolean getIsArrow() {
+	return isArrow;
+   }
+
+   public void setIsArrow (boolean iA) {
+	isArrow = iA;
+   }
    public ImageIcon getTileImage() {
       return tileImage;
    }
