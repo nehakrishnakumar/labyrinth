@@ -157,7 +157,9 @@ private class Listener implements ActionListener
             else if (c == board.length && shift % 2 == 0) {
                board[r][c].setMovable(true);
             }
-            
+            if (r == board.length || c == board[0].length) {
+		//set to end of tile
+	    }
          }
       }
    }
@@ -166,13 +168,10 @@ private class Listener implements ActionListener
 	//TODO: track location of where it is clicked and use location to figure out if on a certain tile
 	   //check if on row or column that has arrow present
       //if (on row or column w/ arrow present)
+      //if shift is horizontal shift variable will be 0
+      //if shift is vertical shift variable will be 1
       int shift = 0;  //temporary shifting variable
-      shift(board);//shift all neighbors up by one (manipulate the neighbors array so everything goes up by one for each member of that row)
-      for (int r = 0; r < board.length; r++) {
-	for (int c = 0; c < board[0].length; c++) {
-
-	}
-      }
+      shift(board, shift);//shift all neighbors up by one (manipulate the neighbors array so everything goes up by one for each member of that row)
       //for each member in board
       //setNeighbors to set neighbors to the next one's neighbors, and keep moving on. when you reach the last one take it out and set as the outOfBoardTile
       //this'll be for all of board
