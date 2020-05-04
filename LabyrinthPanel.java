@@ -144,7 +144,7 @@ private class Listener implements ActionListener
       }
    }
    public static void shift(Tile[][] board, int shift) {  //params: board and row or column w/ arrow to shift
-   //TODO: create a warning box that lets you know when you can't shift there --> first contact graphics creator
+   //TODO: involve the movable tile somehow, find a way to "track" it, maybe with mouse location
       for (int r = 0; r < board.length; r++) {
          for (int c = 0; c < board[0].length; c++) {
             if (c != board[0].length && shift % 2 == 1) //arrow is on row and c != board[0].length
@@ -158,7 +158,7 @@ private class Listener implements ActionListener
                board[r][c].setMovable(true);
             }
             if (r == board.length || c == board[0].length) {
-		//set to end of tile
+		board[r][c].setMovable(false); //is the end tile to be "taken out" for later use
 	    }
          }
       }
